@@ -19,4 +19,14 @@ function showUserOnScreen(obj){
     parentElem.appendChild(childElem)  
     //can do this instead of method 1 but it replaces instead of saving previous data so use method 1
     //parentElem.innerHTML =`<li> ${obj.name} - ${obj.email} - ${obj.phonenumber}</li>`
+    const deleteBtn = document.createElement('input')
+    deleteBtn.type = "button"
+    deleteBtn.value = "Delete"
+    deleteBtn.onclick = () =>{
+        localStorage.removeItem(obj.email)
+        parentElem.removeChild(childElem)
+    }
+    childElem.appendChild(deleteBtn)
+    parentElem.appendChild(childElem)
+
 }
